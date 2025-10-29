@@ -9,13 +9,14 @@ dotenv.config()
 
 import './database/connection'
 
+import userRoute from './routes/userRoute'
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("Hello World");
-});
-app.get("/about", (req: Request, res: Response) => {
-    res.send("Hello this is about");
-});
+app.use(express.json())
+
+
+app.use("/",userRoute)
+
+
 
 app.listen(port, () => {
     console.log(`The server is running at port ${port}`);
