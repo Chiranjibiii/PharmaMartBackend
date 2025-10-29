@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "src",
+    "outDir": "build",
+
+    // Environment Settings
+    "module": "commonjs",
+    "target": "esnext",
+    "types": [],
+
+    // Module Resolution
+    "moduleResolution": "node",
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Decorator Support (required for Sequelize + TS)
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false,
+    "isolatedModules": false,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+
+    // For ES Module and import compatibility
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "phramamartbackend",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "nodemon",
+    "build": "rimraf ./build && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.3",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.9.1",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.10",
+    "rimraf": "^5.0.9",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.9.3"
+  }
+}
