@@ -1,52 +1,52 @@
-import {
-    Table,
-    Column,
-    Model,
-    DataType,
-    CreatedAt,
-    PrimaryKey
-}from 'sequelize-typescript'
-import { toDefaultValue } from 'sequelize/types/utils'
+    import {
+        Table,
+        Column,
+        Model,
+        DataType,
+        CreatedAt,
+        PrimaryKey
+    }from 'sequelize-typescript'
+    import { toDefaultValue } from 'sequelize/types/utils'
 
-@Table({
-    tableName:'user',
-    modelName:'User',
-    timestamps:true
-})
-
-class User extends Model{
-    @Column({
-        primaryKey:true,
-        type:DataType.UUID,
-       defaultValue:DataType.UUIDV4
+    @Table({
+        tableName:'user',
+        modelName:'User',
+        timestamps:true
     })
-    declare id:string
+
+    class User extends Model{
+        @Column({
+            primaryKey:true,
+            type:DataType.UUID,
+        defaultValue:DataType.UUIDV4
+        })
+        declare id:string
 
 
-    @Column({
-        type:DataType.STRING
-    })
-    declare username:string
+        @Column({
+            type:DataType.STRING
+        })
+        declare username:string
 
-    @Column({
-        type:DataType.ENUM('customer','admin'),
-            defaultValue:'customer'
-    })
-    declare role:string
-
-
-
-    @Column({
-        type:DataType.STRING
-    })
-    declare email:string
+        @Column({
+            type:DataType.ENUM('customer','admin'),
+                defaultValue:'customer'
+        })
+        declare role:string
 
 
-    @Column({
-        type:DataType.STRING
-    })
-    declare password:string
-}   
+
+        @Column({
+            type:DataType.STRING
+        })
+        declare email:string
 
 
-export default User
+        @Column({
+            type:DataType.STRING
+        })
+        declare password:string
+    }   
+
+
+    export default User

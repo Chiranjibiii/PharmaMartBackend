@@ -57,7 +57,7 @@
             if(isMatched){
                 //generating token
 
-                    const token = jwt.sign({id:data.id},"chiran",{
+                    const token = jwt.sign({id:data.id},process.env.SECRET_KEY as string,{
                         expiresIn:"20days"
                     })
                     res.status(200).json({

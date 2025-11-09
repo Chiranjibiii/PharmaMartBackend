@@ -1,5 +1,8 @@
 import path from 'path';
-import { Sequelize } from 'sequelize-typescript';
+import { BelongsTo, Sequelize } from 'sequelize-typescript';
+import User from './models/userModel';
+import Product from './models/product';
+import Category from './models/category';
 
 const sequelize = new Sequelize({
   database: process.env.DB_NAME!,
@@ -24,4 +27,13 @@ sequelize.sync({force:false}).then(()=>{
     console.log("synced");
     
 })
+
+
+//Relationship between tables
+User.hasMany(Product,{foreignKey:'userId'})
+Product.belongsTo(User,{foreignKey:'userId'})
+
+Product.belongsTo(Category,{foreignKey:"categoryId"})
+Category.hasOne(Product,{foreignKey:"categoryId"})
+
 export default sequelize

@@ -10,18 +10,24 @@ dotenv.config()
 import './database/connection'
 
 import userRoute from './routes/userRoute'
+import porductRoute from './routes/productRoute'
 import adminSeeder from './adminSeeder';
+import categoryController from './controllers/categoryController';
 
 app.use(express.json())
 
 
+
 //admin seeder
 adminSeeder()
+categoryController.seedCategory()
 
 app.use("/",userRoute)
+app.use("/admin/product",porductRoute)
 
 
 
 app.listen(port, () => {
+
     console.log(`The server is running at port ${port}`);
 });
