@@ -9,5 +9,9 @@ const router:Router=express.Router()
 
 router.route("/").post(authMiddleware.isAuthenticated,authMiddleware.restrictTo(Role.Admin),
 upload.single('image'),productController.addproduct)
+.get(productController.getAllproduct)
 
+
+router.route("/:id").get(productController.getSingleProduct)
+.delete(authMiddleware.isAuthenticated,authMiddleware.restrictTo(Role.Admin ),productController.deleteProduct)
 export default router
