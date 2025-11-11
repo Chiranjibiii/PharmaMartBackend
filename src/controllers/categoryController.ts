@@ -50,7 +50,7 @@ class CategoryController {
         })
     }
     async getCategory(req:Request,res:Response):Promise<void>{
-        const data=Category.findAll()
+        const data=await Category.findAll()
         res.status(200).json({
             message:"Category fetched sucessfully",
             data

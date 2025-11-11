@@ -11,8 +11,10 @@ import './database/connection'
 
 import userRoute from './routes/userRoute'
 import porductRoute from './routes/productRoute'
+import categoryRoute from './routes/categoryRoute'
 import adminSeeder from './adminSeeder';
 import categoryController from './controllers/categoryController';
+import cartRoute from './routes/cartRoute'
 
 app.use(express.json())
 
@@ -24,6 +26,8 @@ categoryController.seedCategory()
 
 app.use("/",userRoute)
 app.use("/admin/product",porductRoute)
+app.use("/admin/category",categoryRoute)
+app.use("/customer/cart",cartRoute)
 
 
 
