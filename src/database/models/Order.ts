@@ -11,6 +11,7 @@ import {
 
 import OrderDetail from './orderDetails';
 import Payment from './paymentstatus';
+import User from './userModel';
 
 
 @Table({
@@ -33,15 +34,25 @@ class Order extends Model {
   @Column({ type: DataType.FLOAT, allowNull: false })
   declare totalAmount: number;
 
-  @Column({ type: DataType.ENUM('pending','cancelled','delivered','ontheway','preparation'), defaultValue:'pending' })
+  @Column({
+    type: DataType.ENUM('pending','cancelled','delivered','ontheway','preparation'),
+    defaultValue: 'pending'
+  })
   declare orderStatus: string;
 
   @ForeignKey(() => Payment)
-  @Column({ type: DataType.UUID, allowNull:true })
+  @Column({ type: DataType.UUID })
   declare paymentId: string;
 
   @BelongsTo(() => Payment)
   declare payment: Payment;
+
+  @ForeignKey(() => User)
+  @Column({ type: DataType.UUID, allowNull: false })
+  declare userId: string;
+
+  @BelongsTo(() => User)
+  declare user: User;
 
   @HasMany(() => OrderDetail)
   declare orderDetails: OrderDetail[];
