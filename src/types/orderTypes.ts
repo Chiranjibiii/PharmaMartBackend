@@ -54,3 +54,11 @@ export enum TransactionStatus{
     Pending='Pending',
     Initiated='Initiated'
 }
+
+export enum OrderStatus{
+    Pending='pending',
+    Cancelled='cancelled',
+    Ontheway='ontheway',
+    Delivered='delivered',
+    Prepration='prepration'
+}
